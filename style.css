@@ -8,12 +8,13 @@ body {
   align-items: center;
 }
 
+/* Contenedor principal del medidor */
 .medidor {
-  width: 640px;
-  height: 640px;
+  width: min(90vw, 640px);
+  height: min(90vw, 640px);
   background: #b5cce3;
   border-radius: 50%;
-  border: 12px solid #351010;
+  border: 0.01875em solid #351010; /* 12px en base a 640px */
   box-shadow:
     inset 0 0 30px rgba(0,0,0,0.15),
     0 8px 20px rgba(0,0,0,0.2);
@@ -30,15 +31,15 @@ body {
 }
 
 .empresa {
-  font-size: 4.5em;
+  font-size: clamp(1.8em, 4vw, 4.5em);
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 0.2em;
   color: #003366;
 }
 
 .codigo {
-  font-size: 1.9em;
-  margin-bottom: 10px;
+  font-size: clamp(1em, 2vw, 1.9em);
+  margin-bottom: 0.5em;
   color: #555;
 }
 
@@ -46,23 +47,21 @@ body {
   background-color: white;
   border: 1px solid #444;
   border-radius: 5px;
-  padding: 6px 10px;
-  margin-top: 12px;
-  font-size: 1.75em;
+  padding: 0.3em 0.6em;
+  margin-top: 0.5em;
+  font-size: clamp(0.9em, 1.8vw, 1.75em);
   color: #000;
   font-family: monospace;
   display: inline-block;
   box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
 }
 
-
 .fecha {
-  font-size: 1em;
+  font-size: clamp(0.7em, 1.2vw, 1em);
   color: #333;
-  margin-top: 5px;
+  margin-top: 0.3em;
   font-family: monospace;
 }
-
 
 .vidrio-brillo {
   position: absolute;
@@ -77,34 +76,42 @@ body {
 }
 
 .contador {
-  font-size: 5em;
+  font-size: clamp(2.5em, 5vw, 5em);
   font-weight: bold;
   background: #092b4a;
   color: #ffffff;
-  padding: 32px 80px;
+  padding: 0.8em 2em;
   border-radius: 10px;
   box-shadow: inset 0 0 12px rgb(255, 255, 255), 0 0 8px #34506c;
-  margin-bottom: 20px;
+  margin-bottom: 0.5em;
   display: flex;
   align-items: baseline;
   justify-content: center;
   position: relative;
   z-index: 2;
-    letter-spacing: 0.25em; /* ← esta línea agrega espacio entre los dígitos */
+  letter-spacing: 0.25em;
 }
 
 .contador .unidad {
   font-size: 0.4em;
-  margin-left: 32px;
+  margin-left: 0.5em;
   color: #ccc;
 }
 
 .iconos {
-  margin-top: 15px;
+  margin-top: 0.5em;
   display: flex;
   justify-content: space-around;
-  font-size: 30px;
+  font-size: clamp(1.2em, 3vw, 30px);
   color: #555;
-  padding: 0 30px;
+  padding: 0 1em;
   z-index: 2;
+}
+
+/* Ajustes extra para pantallas muy pequeñas */
+@media (max-width: 400px) {
+  .contador {
+    padding: 0.6em 1.2em;
+    letter-spacing: 0.15em;
+  }
 }
