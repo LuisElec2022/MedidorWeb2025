@@ -14,7 +14,7 @@ body {
   height: min(90vw, 640px);
   background: #b5cce3;
   border-radius: 50%;
-  border: 0.01875em solid #351010; /* 12px en base a 640px */
+  border: 0.02875em solid #351010; /* 12px en base a 640px */
   box-shadow:
     inset 0 0 30px rgba(0,0,0,0.15),
     0 8px 20px rgba(0,0,0,0.2);
