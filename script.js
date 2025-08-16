@@ -5,7 +5,7 @@ function actualizarMedidor() {
   // Supongamos potencia promedio 1900 W
   // Intervalo = 2 segundos → delta_t = 2/3600 h
   const potenciaPromedio = 1900; // W
-  const delta_h = 2 / 3600; // horas
+  const delta_h = 10 / 3600; // horas
   const incremento = potenciaPromedio * delta_h; // kWh
 
   contador += incremento;
