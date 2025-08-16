@@ -76,7 +76,7 @@ body {
 }
 
 .contador {
-  font-size: clamp(4em, 6vw, 8em);
+  font-size: clamp(3em, 6vw, 7em);
   font-weight: 900;
   background: #092b4a;
   color: #ffffff;
@@ -89,7 +89,7 @@ body {
   justify-content: center;
   position: relative;
   z-index: 2;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.3em;
 }
 
 .contador .unidad {
