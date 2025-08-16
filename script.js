@@ -16,7 +16,7 @@ function actualizarMedidor() {
   document.getElementById('kwh').innerText = valorFormateado;
 }
 
-setInterval(actualizarMedidor, 2000);
+setInterval(actualizarMedidor, 10000);
 
 // ==== Fecha ====
 let fechaActual = new Date();
