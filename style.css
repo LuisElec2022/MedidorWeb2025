@@ -76,7 +76,7 @@ body {
 }
 
 .contador {
-  font-size: clamp(5em, 8vw, 10em);
+  font-size: clamp(4em, 6vw, 8em);
   font-weight: 900;
   background: #092b4a;
   color: #ffffff;
