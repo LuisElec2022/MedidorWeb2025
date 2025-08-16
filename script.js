@@ -1,7 +1,13 @@
 let contador = 0;
 
 function actualizarMedidor() {
-  let incremento = Math.random() * 7;
+  // Simulación de consumo promedio:
+  // Supongamos potencia promedio 1900 W
+  // Intervalo = 2 segundos → delta_t = 2/3600 h
+  const potenciaPromedio = 1900; // W
+  const delta_h = 2 / 3600; // horas
+  const incremento = potenciaPromedio * delta_h; // kWh
+
   contador += incremento;
 
   if (contador > 9999.99) contador = 0;
@@ -12,10 +18,10 @@ function actualizarMedidor() {
 
 setInterval(actualizarMedidor, 2000);
 
+// ==== Fecha ====
 let fechaActual = new Date();
 
 function actualizarFecha() {
-  // Suma 2 minutos cada vez que se llama
   fechaActual.setMinutes(fechaActual.getMinutes() + 2);
 
   const dia = fechaActual.getDate().toString().padStart(2, '0');
@@ -26,7 +32,5 @@ function actualizarFecha() {
   document.getElementById('fecha').innerText = fechaFormateada;
 }
 
-// Inicial
 actualizarFecha();
-// Cada 2 minutos reales (120000 ms)
 setInterval(actualizarFecha, 120000);
