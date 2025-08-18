@@ -8,21 +8,21 @@ body {
   align-items: center;
 }
 
-/* Contenedor principal del medidor */
 .medidor {
   width: min(90vw, 640px);
   height: min(90vw, 640px);
-  background: #b5cce3;
-  border-radius: 70%;
-  border: 0.5em solid #351010; /* 12px en base a 640px */
+  background: #c1d8f0; /* color ligeramente más brillante */
+  border-radius: 50%;   /* círculo perfecto */
+  border: 0.5em solid #351010;
   box-shadow:
-    inset 0 0 30px rgba(0,0,0,0.15),
-    0 8px 20px rgba(0,0,0,0.2);
+    inset 0 0 25px rgba(0,0,0,0.15),
+    0 10px 25px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .medidor-cara {
@@ -46,14 +46,14 @@ body {
 .especificaciones {
   background-color: white;
   border: 1px solid #444;
-  border-radius: 5px;
-  padding: 0.3em 0.6em;
+  border-radius: 8px;
+  padding: 0.35em 0.75em;
   margin-top: 0.5em;
-  font-size: clamp(0.9em, 1.8vw, 1.75em);
+  font-size: clamp(0.9em, 1.6vw, 1.75em);
   color: #000;
   font-family: monospace;
   display: inline-block;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
 }
 
 .fecha {
@@ -70,26 +70,29 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: radial-gradient(ellipse at top left, rgba(255,255,255,0.5), transparent);
+  background: radial-gradient(ellipse at top left, rgba(255,255,255,0.35), transparent 70%);
   z-index: 1;
   pointer-events: none;
+  mix-blend-mode: screen;
 }
 
 .contador {
-  font-size: clamp(3em, 6vw, 7em);
+  font-size: clamp(2.8em, 6vw, 7em);
   font-weight: 900;
-  background: #092b4a;
+  background: linear-gradient(145deg, #092b4a, #0f3a6d);
   color: #ffffff;
-  padding: 0.5em 1.5em;
-  border-radius: 10px;
-  box-shadow: inset 0 0 10px rgb(255, 255, 255), 0 0 8px #34506c;
+  padding: 0.5em 2em;
+  border-radius: 12px;
+  box-shadow: inset 0 0 12px rgba(255,255,255,0.4),
+              0 4px 8px rgba(0,0,0,0.5);
   margin-bottom: 0.5em;
   display: flex;
   align-items: baseline;
   justify-content: center;
   position: relative;
   z-index: 2;
-  letter-spacing: 0.275em;
+  letter-spacing: 0.25em;
+  transition: all 0.3s ease;
 }
 
 .contador .unidad {
@@ -99,19 +102,23 @@ body {
 }
 
 .iconos {
-  margin-top: 0.5em;
+  margin-top: 0.7em;
   display: flex;
   justify-content: space-around;
-  font-size: clamp(1.2em, 3vw, 30px);
-  color: #555;
-  padding: 0 1em;
+  font-size: clamp(1.2em, 3vw, 32px);
+  color: #444;
+  padding: 0 1.5em;
   z-index: 2;
 }
 
-/* Ajustes extra para pantallas muy pequeñas */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .contador {
-    padding: 0.6em 1.2em;
+    padding: 0.4em 1em;
+    font-size: clamp(2em, 5vw, 4em);
     letter-spacing: 0.15em;
+  }
+  .iconos {
+    font-size: clamp(1em, 4vw, 28px);
+    gap: 0.5em;
   }
 }
