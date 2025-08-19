@@ -4,7 +4,7 @@ function actualizarMedidor() {
   // Simulación de consumo promedio:
   // Supongamos potencia promedio 1900 W
   // Intervalo = 2 segundos → delta_t = 2/3600 h
-  const potenciaPromedio = 190; // W
+  const potenciaPromedio = 240; // W
   const delta_h = 10 / 3600; // horas
   const incremento = potenciaPromedio * delta_h; // kWh
 
@@ -16,7 +16,7 @@ function actualizarMedidor() {
   document.getElementById('kwh').innerText = valorFormateado;
 }
 
-setInterval(actualizarMedidor, 2000);
+setInterval(actualizarMedidor, 5000);
 
 // ==== Fecha ====
 let fechaActual = new Date();
